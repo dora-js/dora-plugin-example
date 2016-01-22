@@ -12,7 +12,7 @@ Example plugin for dora.
 ## Usage
 
 ```bash
-$ npm i dora dora-plugin-example -SD
+$ npm i dora dora-plugin-example -D
 $ ./node_modules/.bin/dora --plugins example
 ```
 
