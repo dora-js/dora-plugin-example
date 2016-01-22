@@ -1,6 +1,6 @@
 import dora from 'dora';
 import { join } from 'path';
-import request from 'supertest';
+import request from 'request';
 
 const port = '12345';
 
@@ -16,9 +16,10 @@ describe('index', () => {
   });
 
   it('GET /package.json', done => {
-    request(`http://localhost:${port}`)
-      .get('/package.json')
-      .expect(/\.\/index\.js/, done);
+    request(`http://localhost:${port}`, (err, res, body) => {
+      expect(body.indexOf('index.js') > -1).toExist();
+      done();
+    });
   });
 });
 
